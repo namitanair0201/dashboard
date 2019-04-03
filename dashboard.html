@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="dashboard for admin">
+    <meta name="author" content="namita nair">
+
+    <!-- font awesome link -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="dashboard.css" rel="stylesheet">
+</head>
+
+<body>
+    <!--navigation bar at top-->
+
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+        <!-- replace this later -->
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="dashboard.html">Edu-Coin</a>
+        <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+                <a class="nav-link" href="#">Sign out</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!--building the sidebar now-->
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="dashboard.html">
+                                <i class="fa fa-home"></i>
+                                At a glance
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="popularity.html">
+                                <span data-feather="file"></span>
+                                <i class="fa fa-chart-pie"></i>
+                                Skill Popularity
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="avg_skill.html">
+                                <i class="fa fa-chart-bar"></i>
+                                Average Skill Rating
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="edit.html">
+                                <i class="far fa-user-circle"></i>
+                                Edit Personal Information
+                            </a>
+                        </li>
+                    </ul>
+
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                        <span>Reports</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="far fa-clock"></i>
+                                Current month
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fa fa-table"></i>
+                                Last quarter
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="far fa-calendar-alt"></i>
+                                Year
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!--developing main content-->
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <div
+                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Dashboard</h1>
+
+            </div>
+            <!--chart for traffic is here!!!-->
+
+            <canvas class="my-4 w-100" id="traffic" width="900" height="380"></canvas>
+
+            <div class="container-fluid">
+                <table class="table">
+                    <thead class="thead">
+                        <th>Blockno</th>
+                        <th>DateTime</th>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>TxnFee(ETH)</th>
+                    </thead>
+                    <tr>
+                        <td>3978485</td>
+                        <td>3/5/2019 5:19:48 PM</td>
+                        <td>0x97268276ce11888fbe2a7ad9048bb626639d57f8</td>
+                        <td></td>
+                        <td>0.002827394</td>
+                    </tr>
+                    <tr>
+                        <td>3978500</td>
+                        <td>3/5/2019 5:23:33 PM</td>
+                        <td>0x97268276ce11888fbe2a7ad9048bb626639d57f8</td>
+                        <td>0x711fea9ea1e4b8ce9a1536dbdb33816a7cc4aacc</td>
+                        <td>0.000064852</td>
+                    </tr>
+                    <tr>
+                        <td>3978506</td>
+                        <td>3/5/2019 5:25:03 PM</td>
+                        <td>0x208b2ce12bc073d5a8213e6bee8b711c02d63383</td>
+                        <td>0x711fea9ea1e4b8ce9a1536dbdb33816a7cc4aacc</td>
+                        <td>0.000125767</td>
+                    </tr>
+                    <tr>
+                        <td>3978510</td>
+                        <td>3/5/2019 5:26:03 PM</td>
+                        <td>0x208b2ce12bc073d5a8213e6bee8b711c02d63383</td>
+                        <td>0x711fea9ea1e4b8ce9a1536dbdb33816a7cc4aacc</td>
+                        <td>0.000108508</td>
+                    </tr>
+                </table>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Previous</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </main>
+</body>
+<!--bootstrap javascript-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+</script>
+<!--chart js-->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+<script>
+    ts = [1551806613, 1551806703, 1551806763, 1551806793, 1551806868, 1551807018, 1551807063, 1551807168,
+        1551807198, 1551807258, 1551807348, 1551807378, 1551807378, 1551807588, 1551807633, 1551807768, 1551808278,
+        1551808878, 1551808923, 1551808953, 1551808983, 1551809013, 1551809058, 1551809118, 1551809163, 1551809193,
+        1551809223, 1551853435, 1551853510, 1551853570, 1551853570, 1551853585, 1551853720, 1551853795, 1551853855,
+        1551853855, 1551853885, 1551853885, 1551854155, 1551854185, 1551854245, 1551854275, 1551854335, 1551854575,
+        1551854605, 1551854650, 1551854755, 1551854800, 1551854845, 1551854890, 1551855656, 1551855716, 1551855776,
+        1551855806, 1551855836, 1553234905, 1553235055, 1553235220, 1553235250, 1553521140
+    ]
+
+    time_asc = [0.000019328, 0.000019328, 0.000019328, 0.000019328, 0.000019328, 0.000019328, 0.000019328, 0.000022828,
+        0.000026582, 0.000026710, 0.000026710, 0.000049468, 0.000049596, 0.000049660, 0.000049724, 0.000049980,
+        0.000050572, 0.000060711, 0.000064852, 0.000065511, 0.000078252, 0.000078252, 0.000078252, 0.000078316,
+        0.000078316, 0.000078316, 0.000078508, 0.000078508, 0.000078508, 0.000078636, 0.000078636, 0.000078636,
+        0.000080383, 0.000080575, 0.000080575, 0.000080575, 0.000080895, 0.000080895, 0.000095511, 0.000095511,
+        0.000095511, 0.000095511, 0.000095767, 0.000095767, 0.000095767, 0.000095895, 0.000096052, 0.000108252,
+        0.000108316, 0.000108508, 0.000108636, 0.000110383, 0.000110511, 0.000110575, 0.000110895, 0.000115556,
+        0.000125511, 0.000125767, 0.000160172, 0.000175428
+    ]
+    time = [0.000064852, 0.000125767, 0.000108508, 0.000095767, 0.000078508, 0.000095767, 0.000078508,
+        0.000095767, 0.000078508, 0.000175428, 0.000019328, 0.000019328, 0.000022828, 0.000019328, 0.000019328,
+        0.000019328, 0.000110511, 0.00004966, 0.000110575, 0.000108316, 0.000080575, 0.000078316, 0.000080575,
+        0.000078316, 0.000080575, 0.000078316, 0.000096052, 0.000049596, 0.000125511, 0.000095511, 0.000108252,
+        0.000050572, 0.000095511, 0.000078252, 0.000095511, 0.000060711, 0.00002671, 0.00002671, 0.000065511,
+        0.000078252, 0.000095511, 0.000078252, 0.000160172, 0.00004998, 0.000110895, 0.000108636, 0.000080895,
+        0.000078636, 0.000080895, 0.000095895, 0.000078636, 0.000078636, 0.000115556, 0.000019328, 0.000019328,
+        0.000049468, 0.000110383, 0.000080383, 0.000026582, 0.000049724
+    ]
+    Chart.defaults.global.defaultFontFamily = 'Roboto';
+    Chart.defaults.global.defaultFontSize = '14';
+    Chart.defaults.global.defaultFontStyle = 'normal';
+    var ctx = document.getElementById("traffic");
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        label: 'Transaction time',
+        data: {
+            labels: ts,
+            datasets: [{
+                data: time_asc,
+                lineTension: 0,
+                backgroundColor: 'transparent',
+                borderColor: '#000075',
+                borderWidth: 4,
+                pointBackgroundColor: '#000075'
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                fontSize: 20,
+                text: "Transaction cost with time"
+            },
+            scales: {
+                yAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: "Cost in ETH",
+                    },
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }],
+                xAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: "UNIX Timestamp",
+                    }
+                }]
+            },
+            legend: {
+                display: false,
+            }
+        },
+
+        tooltips: {
+            enabled: false,
+        }
+    });
+</script>
